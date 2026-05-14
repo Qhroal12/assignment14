@@ -1,6 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "DLinkedList.h"
 
+//DLinkedList에 있는 head는 각 자료의 끝과 처음을 잡아준다. (마지막 -> head -> 처음 -> ... -> 마지막 -> head) 반복
+
+//추가할 때에는 추가할 자료(ptr)의 next,prev를 먼저 연결시킨다.
+//이후 양 옆(왼쪽 자료일 경우 (이전 자료)->next, 오른쪽 자료일 경우 (다음 자료)->prev의 값(주소)를 추가할 자료(ptr의 주소)로 넣는다 
+
 DLinkedList* createDLinkedList() {
 	DLinkedList* temp;
 	temp = (DLinkedList*)malloc(sizeof(DLinkedList));
